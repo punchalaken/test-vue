@@ -5,6 +5,27 @@ import LeftColumnInformation from './LeftColumn/LeftColumnInformation.vue';
 import LeftColumnSkills from './LeftColumn/LeftColumnSkills.vue';
 import LeftColumnContacts from './LeftColumn/LeftColumnContacts.vue';
 
+const myContacts = {
+    telegramContact: {
+        hrefSocial: "https://t.me/Punchalaken",
+        assetIcon: "telegram-icon.png" ,
+        altSocial: "Иконка телеграма",
+        nameSocial: "Телеграм",
+    },
+    vkContact: {
+        hrefSocial: "https://vk.com/punchalaken",
+        assetIcon: "vk-icon.png" ,
+        altSocial: "Иконка ВКонтакте",
+        nameSocial: "ВКонтакте",
+    },
+    gmailContact: {
+        hrefSocial: "mailto:penekkakti@gmail.com",
+        assetIcon: "gmail-icon.png" ,
+        altSocial: "Иконка Gmail",
+        nameSocial: "Gmail",
+    }
+}
+
 
 </script>
 
@@ -39,25 +60,9 @@ import LeftColumnContacts from './LeftColumn/LeftColumnContacts.vue';
     "Figma", 
     "Docker"]'/>
 
-    <article class="left-column__contacts">
-        <LeftColumnContacts 
-            hrefSocial="https://t.me/Punchalaken" 
-            assetIcon="telegram-icon.png" 
-            alt-social="Иконка телеграма"
-            nameSocial="Телеграм"/>
-
-        <LeftColumnContacts 
-            hrefSocial="https://vk.com/punchalaken" 
-            assetIcon="vk-icon.png" 
-            alt-social="Иконка ВКонтакте"
-            nameSocial="ВКонтакте"/>
-
-        <LeftColumnContacts 
-            hrefSocial="mailto:penekkakti@gmail.com" 
-            assetIcon="gmail-icon.png" 
-            alt-social="Иконка Gmail"
-            nameSocial="Gmail"/>
-    </article>
+    
+    <LeftColumnContacts :contactsObject="myContacts"/>
+    
 
 </section>
 </template>

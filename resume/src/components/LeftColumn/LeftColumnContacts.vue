@@ -1,26 +1,26 @@
 <script setup lang="ts">
-
-    const props = defineProps<{
-        hrefSocial: string;
-        assetIcon:string;
-        altSocial: string;
-        nameSocial: string;
+    defineProps<{
+        contactsObject: {
+            [contactName: string]: {
+                [nameValue: string]: string
+            }
+        }
     }>();
-
-    const path = new URL(`../../assets/images/${props.assetIcon}`, import.meta.url).href;
 
 </script>
 
 
 <template>
 
-        <a :href="hrefSocial"
+    <article class="left-column__contacts" v-for="(value, key) in contactsObject" :key="key">
+        <a :href="value.hrefSocial"
             target="_blank">
             <img 
-                :src="path"
-                :alt="altSocial">
-            <span>{{ nameSocial }}</span>
+                :src="`../assets/images/${ value.assetIcon }`"
+                :alt="value.altSocial">
+            <span>{{ value.nameSocial }}</span>
         </a>
+    </article>
 
 </template>
 
