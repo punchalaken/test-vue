@@ -26,6 +26,11 @@ const myContacts = {
     }
 }
 
+const myInformationObject = {'Возраст': '26', 
+            'Профессия': 'Frontend developer', 
+            'Телефон': '+9 (999) 000-00-00', 
+            'Город': 'Санкт-Петербург'}
+
 
 </script>
 
@@ -41,11 +46,7 @@ const myContacts = {
         Junior frontend developer
     </h2>
 
-    <LeftColumnInformation :information-object="
-            {'Возраст': '26', 
-            'Профессия': 'Frontend developer', 
-            'Телефон': '+9 (999) 000-00-00', 
-            'Город': 'Санкт-Петербург'}"/>
+    <LeftColumnInformation :information-object="myInformationObject"/>
     
     <LeftColumnSkills :skill-array='
     ["HTML",
@@ -98,13 +99,4 @@ const myContacts = {
         min-height: 800px;
     }
 }
-
-.left-column__contacts {
-    display: flex;
-    max-width: 349px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
 </style>
