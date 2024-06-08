@@ -31,6 +31,7 @@
 
 .main-information__job{    
     max-width: 440px;
+    min-width: 300px;
     h3 {
         margin-bottom: 22px;
     }
