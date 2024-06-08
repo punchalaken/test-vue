@@ -4,7 +4,7 @@
         namePhoto: string;
     }>();
 
-    const path = new URL(`../assets/images/${props.namePhoto}`, import.meta.url).href;
+    const path = new URL(`../../assets/images/${props.namePhoto}`, import.meta.url).href;
 
 </script>
 

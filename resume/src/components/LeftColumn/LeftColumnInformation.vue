@@ -1,11 +1,10 @@
 <script setup lang="ts">
 
-    interface SomeObject {
-        [nomination: string]: string;
-    }
 
-    const props = defineProps<{
-        informationObject: SomeObject;
+    defineProps<{
+        informationObject: {
+            [nomination: string]: string
+        };
     }>();
 
 </script>
@@ -13,7 +12,7 @@
 <template>
     <article class="left-column__information">
         <ul>
-            <li v-for="(value, key) in props.informationObject" :key="key">
+            <li v-for="(value, key) in informationObject" :key="key">
                 <span>{{ key }}:</span>
                 <span>{{ value }}</span>
             </li>

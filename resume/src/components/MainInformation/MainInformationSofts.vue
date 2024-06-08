@@ -1,11 +1,14 @@
-
 <script setup lang="ts">
+
     defineProps<{
-        skillsArray: string[];
+        softsObject: {
+            [softNumber: string]: {
+                [nameValue: string]: string
+            }
+        }
     }>();
 
 </script>
-
 
 <template>
 
@@ -13,13 +16,13 @@
 
 <div class="main-information__softs">
     <h3>Навыки:</h3>
-    <div v-for="item in skillsArray" :key="item" class="main-information__personality">
+    <div v-for="(value, key) in softsObject" :key="key" class="main-information__personality">
         <div class="main-information-levels">
-            <div>{{ item[0] }}</div>
-            <div>{{ item[1] }}</div>
+            <div>{{ value.start }}</div>
+            <div>{{ value.stop }}</div>
         </div>
         <div class="main-information__personality-line">
-            <div class="main-information__personality-point" :style="{ 'margin-left': item[2] + '%' }"></div>
+            <div class="main-information__personality-point" :style="{ 'margin-left': value.persentValue + '%' }"></div>
         </div>
     </div>
 </div>

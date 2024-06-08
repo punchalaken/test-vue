@@ -1,22 +1,23 @@
 <script setup lang="ts">
 
-    const props = defineProps<{
-        jobName: string;
-        jobDate: string;
-        jobPlace: string;
-        jobSkillArray: any[]
+    defineProps<{
+        jobObject: {
+            [jobNumber: string]: {
+                [nameValue: string]: string | Array<string>
+            }
+        }
     }>();
 
 </script>
 
 <template>
 
-    <div class="main-information__job">
-        <h3>{{ jobName }}</h3>
-        <div>{{ jobDate }}</div>
-        <p>{{ jobPlace }}</p>
+    <div class="main-information__job" v-for="(value, key) in  jobObject" :key="key">
+        <h3>{{ value.Name }}</h3>
+        <div>{{ value.Date }}</div>
+        <p>{{ value.Place }}</p>
         
-        <div class="main-information__responsibilities" v-for="item in props.jobSkillArray" :key="item">
+        <div class="main-information__responsibilities" v-for="item in value.skillArray" :key="item">
             <div class="main-information__point"></div>
             <span>{{ item }}</span>
         </div>

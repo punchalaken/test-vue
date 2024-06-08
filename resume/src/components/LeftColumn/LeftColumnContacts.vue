@@ -7,7 +7,7 @@
         nameSocial: string;
     }>();
 
-    const path = new URL(`../assets/images/${props.assetIcon}`, import.meta.url).href;
+    const path = new URL(`../../assets/images/${props.assetIcon}`, import.meta.url).href;
 
 </script>
 
