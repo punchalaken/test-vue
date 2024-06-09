@@ -8,7 +8,6 @@
 
 </script>
 
-
 <template>
 
     <img class="left-column__image"
@@ -16,7 +15,6 @@
         alt="Моя фотография">
 
 </template>
-
 
 <style lang="scss" scoped>
 

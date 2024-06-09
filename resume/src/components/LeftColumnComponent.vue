@@ -31,7 +31,6 @@ const myInformationObject = {'Возраст': '26',
             'Телефон': '+9 (999) 000-00-00', 
             'Город': 'Санкт-Петербург'}
 
-
 </script>
 
 <template >
@@ -61,13 +60,11 @@ const myInformationObject = {'Возраст': '26',
     "Figma", 
     "Docker"]'/>
 
-    
     <LeftColumnContacts :contactsObject="myContacts"/>
-    
 
 </section>
-</template>
 
+</template>
 
 <style lang="scss" scoped>
 
@@ -99,4 +96,5 @@ const myInformationObject = {'Возраст': '26',
         min-height: 800px;
     }
 }
+
 </style>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-
     defineProps<{
         informationObject: {
             [nomination: string]: string
@@ -10,6 +9,7 @@
 </script>
 
 <template>
+    
     <article class="left-column__information">
         <ul>
             <li v-for="(value, key) in informationObject" :key="key">
@@ -18,6 +18,7 @@
             </li>
         </ul>
     </article>
+
 </template>
   
 <style scoped lang="scss">

@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 
     defineProps<{
@@ -11,7 +10,6 @@
 
 </script>
 
-
 <template>
 
     <div class="main-information__education">
@@ -19,9 +17,7 @@
       <div class="main-information__university" v-for="(value, key) in educationObject" :key="key">{{ value.Name }} {{ value.Faculty }} {{ value.Date }}</div>
     </div>
 
-
 </template>
-
 
 <style lang="scss" scoped>
 

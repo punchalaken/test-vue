@@ -72,12 +72,15 @@ const myDescription = `Я приверженец активного и пози�
         <MainInformationAbout :text="myDescription"/>
         
         <div class="main-information__skills">
+
             <MainInformationJob :job-object="myJobInformation" />
 
             <div class="main-information__progress"> 
+
                 <MainInformationSofts :softs-object="mySoftObject"/> 
 
                 <MainInformationEducation :educationObject="myEducationObject"/>
+                
             </div>
         </div>
     </section>

@@ -21,8 +21,6 @@
             <div class="main-information__point"></div>
             <span>{{ item }}</span>
         </div>
-
-
     </div>
 
 </template>

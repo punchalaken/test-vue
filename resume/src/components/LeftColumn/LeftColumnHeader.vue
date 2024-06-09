@@ -6,7 +6,6 @@
 
 </script>
 
-
 <template>
 
     <h2 class="left-column_header">
@@ -14,7 +13,6 @@
     </h2>
 
 </template>
-
 
 <style lang="scss" scoped>
 
@@ -27,7 +25,5 @@
         }
 
     }
-
-
 
 </style>

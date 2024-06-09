@@ -13,10 +13,7 @@ import MainInformationComponent from './components/MainInformationComponent.vue'
 
 </div>
 
-
 </template>
 
-
 <style lang="scss" scoped>
-
 </style>

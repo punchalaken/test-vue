@@ -4,7 +4,6 @@
         contactsObject: {
             [contactName: string]: {
                 [nameValue: string]: string
-                
             } 
         }
     }>();
@@ -15,7 +14,6 @@
     }
     
 </script>
-
 
 <template>
 
@@ -30,7 +28,6 @@
     </article>
 
 </template>
-
 
 <style lang="scss" scoped>
 

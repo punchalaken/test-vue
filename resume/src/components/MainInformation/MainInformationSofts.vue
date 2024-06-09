@@ -12,8 +12,6 @@
 
 <template>
 
-
-
 <div class="main-information__softs">
     <h3>Навыки:</h3>
     <div v-for="(value, key) in softsObject" :key="key" class="main-information__personality">
@@ -26,7 +24,6 @@
         </div>
     </div>
 </div>
-
 
 </template>
 
@@ -74,7 +71,5 @@
     border: 2px solid #ffffff;
     border-radius: 50%;
 }
-
-
 
 </style>
