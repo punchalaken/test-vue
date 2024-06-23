@@ -1,11 +1,10 @@
 <script setup lang="ts">
 
     defineProps<{
-        contactsObject: {
-            [contactName: string]: {
-                [nameValue: string]: string
-            } 
-        }
+        href: string,
+        icon: string,
+        alternative: string,
+        name: string
     }>();
 
     function getPathURL(item: string) {
@@ -17,40 +16,30 @@
 
 <template>
 
-    <article class="left-column__contacts" >
-        <a v-for="(value, key) in contactsObject" :key="key" :href="value.hrefSocial" target="_blank">
+        <a :href="href" target="_blank">
             <img 
-            :src="getPathURL(value.assetIcon)" 
-            :alt="value.altSocial">
+            :src="getPathURL(icon)" 
+            :alt="alternative">
 
-            <span>{{ value.nameSocial }}</span>
+            <span>{{ name }}</span>
         </a>
-    </article>
 
 </template>
 
 <style lang="scss" scoped>
 
-.left-column__contacts {
+a {
     display: flex;
-    max-width: 349px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    align-items: center;
+    max-width: 150px;
+    max-height: 45px;
+    text-decoration: none;
+    color: black;
 
-    a {
-        display: flex;
-        align-items: center;
-        max-width: 150px;
-        max-height: 45px;
-        text-decoration: none;
-        color: black;
-
-        img {
-            max-width: 30px;
-            max-height: 30px;
-            margin-right: 5px;
-        }
+    img {
+        max-width: 30px;
+        max-height: 30px;
+        margin-right: 5px;
     }
 }
 

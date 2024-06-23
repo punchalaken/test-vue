@@ -36,9 +36,10 @@
 
     .main-information__responsibilities {
         display: flex;
+        margin-bottom: 10px;
 
         .main-information__point {
-            margin: 7px 5px 0 0;
+            margin: 9px 5px 0 0;
             min-width: 10px;
             max-width: 10px;
             min-height: 10px;

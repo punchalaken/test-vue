@@ -1,68 +1,56 @@
 <script setup lang="ts">
+
+import { computed } from 'vue';
+
 import LeftColumnPhoto from './LeftColumn/LeftColumnPhoto.vue';
 import LeftColumnHeader from './LeftColumn/LeftColumnHeader.vue';
 import LeftColumnInformation from './LeftColumn/LeftColumnInformation.vue';
 import LeftColumnSkills from './LeftColumn/LeftColumnSkills.vue';
 import LeftColumnContacts from './LeftColumn/LeftColumnContacts.vue';
 
-const myContacts = {
-    telegramContact: {
-        hrefSocial: "https://t.me/Punchalaken",
-        assetIcon: "telegram-icon.png" ,
-        altSocial: "Иконка телеграма",
-        nameSocial: "Телеграм",
-    },
-    vkContact: {
-        hrefSocial: "https://vk.com/punchalaken",
-        assetIcon: "vk-icon.png" ,
-        altSocial: "Иконка ВКонтакте",
-        nameSocial: "ВКонтакте",
-    },
-    gmailContact: {
-        hrefSocial: "mailto:penekkakti@gmail.com",
-        assetIcon: "gmail-icon.png" ,
-        altSocial: "Иконка Gmail",
-        nameSocial: "Gmail",
-    }
-}
+import { useLeftColumnStore } from '@/stores/LeftColumnStore';
 
-const myInformationObject = {'Возраст': '26', 
-            'Профессия': 'Frontend developer', 
-            'Телефон': '+9 (999) 000-00-00', 
-            'Город': 'Санкт-Петербург'}
+const information = computed(() =>useLeftColumnStore().$state.myInformationObject)
+const skills = computed(() => useLeftColumnStore().$state.mySkills)
+const contacts = computed(() => useLeftColumnStore().$state.myContacts)
 
 </script>
 
 <template >
 
-<section class="left-column">
+    <section class="left-column">
 
-    <LeftColumnPhoto name-photo="photo.jpg" />
+        <LeftColumnPhoto name-photo="photo.jpg" />
 
-    <LeftColumnHeader name="Клюев Семен"/>
+        <LeftColumnHeader name="Клюев Семен"/>
 
-    <h2 class="left-column__about">
-        Junior frontend developer
-    </h2>
+        <h2 class="left-column__about">
+            Junior frontend developer
+        </h2>
 
-    <LeftColumnInformation :information-object="myInformationObject"/>
-    
-    <LeftColumnSkills :skill-array='
-    ["HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "Vue2",
-    "Vue3",
-    "Vite",
-    "NPM",
-    "GIT",
-    "Figma", 
-    "Docker"]'/>
+        <article class="left-column__information">
+            <ul>
+                <LeftColumnInformation v-for="(value, item) in information" :key="item" 
+                    :status-name="item"
+                    :status-value="value"/>
+            </ul>
+        </article>
 
-    <LeftColumnContacts :contactsObject="myContacts"/>
+        <article class="left-column__skills">
+            <ul class="left-column__skills-list">
+                <LeftColumnSkills v-for="item in skills" :key="item" :skill="item"/>
+            </ul>
+        </article>
+        
+        <article class="left-column__contacts" >
+            <LeftColumnContacts v-for="(item, key) in contacts" 
+                :key="key" :href="item.hrefSocial" 
+                :icon="item.assetIcon" 
+                :alternative="item.altSocial" 
+                :name="item.nameSocial"/>
+        </article>
 
-</section>
+    </section>
 
 </template>
 
@@ -95,6 +83,27 @@ const myInformationObject = {'Возраст': '26',
     @media screen and (width<=500px) {
         min-height: 800px;
     }
+}
+
+.left-column__information {
+        max-width: 349px;
+        width: 95%;
+}
+
+.left-column__skills-list {
+        max-width: 349px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+}
+
+.left-column__contacts {
+    display: flex;
+    max-width: 349px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 </style>
