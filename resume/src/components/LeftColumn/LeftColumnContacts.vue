@@ -7,7 +7,7 @@
         name: string
     }>();
 
-    function getPathURL(item: string) {
+    function getPathURL(item: string): string{
         const path = new URL(`../../assets/images/${item}`, import.meta.url).href
         return path
     }
